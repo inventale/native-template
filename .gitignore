@@ -1,0 +1,52 @@
+HELP.md
+.gradle
+build/
+out/
+lib/
+work/
+temp/
+src/test/http-client.private.env.json
+local.properties
+
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+infrastructure/
+
+#Mac
+.DS_Store
+
+#XCode
+*.xcodeproj
+*.xcworkspace
+
+#MacOS installer builder
+installer/macos/application
+installer/macos/target
+
+#Win installer builder
+installer/windows/target
