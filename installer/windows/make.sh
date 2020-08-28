@@ -1,12 +1,12 @@
 makeRelease() {
-    cp ../../app/build/bin/macos/native-template${2}Executable/native-template.exe target/app/
+    cp ../../app/build/bin/mingw/native-template${2}Executable/native-template.exe target/app/
     echo --- collecting dlls
     for i in $(ldd target/app/native-template.exe | grep /mingw64 | sed 's/.dll.*/.dll/' | sed 's/^[ \t]*//'); do
         cp c:/msys64/mingw64/bin/$i target/dlls/
         echo "$i"
     done
-   echo --- build instalator
-   iscc native-template.iss -DMyAppVersion=$1
+    echo --- build instalator
+    iscc native-template.iss -DMyAppVersion=$1
 }
 
 
