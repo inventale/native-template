@@ -1,0 +1,1 @@
+Place common resource here

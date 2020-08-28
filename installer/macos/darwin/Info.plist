@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleGetInfoString</key>
+    <string>Bundle String</string>
+    <key>CFBundleExecutable</key>
+    <string>native-template.kexe</string>
+    <key>CFBundleName</key>
+    <string>Bundle name</string>
+    <key>CFBundleVersion</key>
+    <string>__VERSION__</string>
+    <key>CFBundleIconFile</key>
+    <string>main.icns</string>
+    <key>CFBundleShortVersionString</key>
+    <string>__VERSION__</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>IFMajorVersion</key>
+    <integer>1</integer>
+    <key>IFMinorVersion</key>
+    <integer>0</integer>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2020</string>
+    <key>NSContactsUsageDescription</key>
+    <string>This app requires contacts access to function properly.</string>
+</dict>
+</plist>

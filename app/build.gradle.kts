@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
 
 plugins {
     kotlin("multiplatform")
@@ -8,22 +9,23 @@ kotlin {
     jvm()
     linuxX64("linux") {
         binaries {
-            executable("test", setOf(DEBUG)) {
+            executable("native-template", setOf(DEBUG, RELEASE)) {
                 entryPoint = "main"
             }
         }
     }
     macosX64("macos") {
         binaries {
-            executable("test", setOf(DEBUG)) {
+            executable("native-template", setOf(DEBUG, RELEASE)) {
                 entryPoint = "sample.objc.main"
             }
         }
     }
     mingwX64("mingw") {
         binaries {
-            executable("test", setOf(DEBUG)) {
-                entryPoint = "main"
+            executable("native-template", setOf(DEBUG, RELEASE)) {
+                entryPoint = "sample.win32.main"
+                linkerOpts("-Wl,--subsystem,windows")
             }
         }
     }
