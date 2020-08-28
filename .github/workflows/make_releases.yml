@@ -44,7 +44,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: installer/macos/target/pkg-signed/*
+        file: installer/macos/target/pkg/*
         tag: ${{ steps.extract_tag.outputs.tag }}
         release_name: ${{ steps.extract_tag.outputs.version }} - ${{ steps.extract_tag.outputs.tag }}
         file_glob: true
