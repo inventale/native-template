@@ -19,8 +19,8 @@ jobs:
         path: |
           ~/.gradle/caches
           ~/.gradle/wrapper
-        key: gradle_6_5_1
-        restore-keys: gradle_6_5_1
+        key: gradle_6_6
+        restore-keys: gradle_6_6
     - name: Cache konan
       uses: actions/cache@v2
       with:
@@ -49,51 +49,51 @@ jobs:
         release_name: ${{ steps.extract_tag.outputs.version }} - ${{ steps.extract_tag.outputs.tag }}
         file_glob: true
         overwrite: true
-#  build_windows:
-#    runs-on: windows-latest
-#    steps:
-#    - uses: actions/checkout@v2
-#    - name: Extract tag
-#      shell: bash
-#      run: |
-#          echo "##[set-output name=tag;]$(echo ${GITHUB_REF#refs/tags/})"
-#          echo "##[set-output name=version;]$(echo ${GITHUB_REF#refs/tags/xpoint-web-sdk-})"
-#      id: extract_tag
-#    - name: Set up JDK 1.8
-#      uses: actions/setup-java@v1
-#      with:
-#        java-version: 11
-#    - name: Cache gradle
-#      uses: actions/cache@v2
-#      with:
-#        path: |
-#          ~/.gradle/caches
-#          ~/.gradle/wrapper
-#        key: gradle_6_5_1
-#        restore-keys: gradle_6_5_1
-#    - name: Cache konan
-#      uses: actions/cache@v2
-#      with:
-#        path: |
-#            ~/.konan/dependencies
-#            ~/.konan/kotlin-native-mingw-1.4.0
-#        key: ${{ runner.os }}-konan-1.4.0
-#        restore-keys: |
-#          ${{ runner.os }}-konan-1.4.0
-#    - name: Install libraries
-#      run: c:\msys64\usr\bin\pacman --noconfirm -S mingw-w64-x86_64-libmicrohttpd
-#    - name: Add msys to path
-#      # msys installed on default image but not in path
-#      run: SETX PATH "%PATH%;C:\msys64\mingw64\bin"
-#    - name: Make windows version
-#      shell: bash
-#      run: ./make-win.sh
-#    - name: Publish
-#      uses: svenstaro/upload-release-action@v2
-#      with:
-#        repo_token: ${{ secrets.GITHUB_TOKEN }}
-#        file: installer/windows/target/pkg/*
-#        tag: ${{ steps.extract_tag.outputs.tag }}
-#        release_name: ${{ steps.extract_tag.outputs.version }} - ${{ steps.extract_tag.outputs.tag }}
-#        file_glob: true
-#        overwrite: true
+  build_windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Extract tag
+      shell: bash
+      run: |
+          echo "##[set-output name=tag;]$(echo ${GITHUB_REF#refs/tags/})"
+          echo "##[set-output name=version;]$(echo ${GITHUB_REF#refs/tags/xpoint-web-sdk-})"
+      id: extract_tag
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: Cache gradle
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: gradle_6_6
+        restore-keys: gradle_6_6
+    - name: Cache konan
+      uses: actions/cache@v2
+      with:
+        path: |
+            ~/.konan/dependencies
+            ~/.konan/kotlin-native-mingw-1.4.0
+        key: ${{ runner.os }}-konan-1.4.0
+        restore-keys: |
+          ${{ runner.os }}-konan-1.4.0
+    - name: Install libraries
+      run: c:\msys64\usr\bin\pacman --noconfirm -S mingw-w64-x86_64-libmicrohttpd
+    - name: Add msys to path
+      # msys installed on default image but not in path
+      run: SETX PATH "%PATH%;C:\msys64\mingw64\bin"
+    - name: Make windows version
+      shell: bash
+      run: ./make-win.sh
+    - name: Publish
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: installer/windows/target/pkg/*
+        tag: ${{ steps.extract_tag.outputs.tag }}
+        release_name: ${{ steps.extract_tag.outputs.version }} - ${{ steps.extract_tag.outputs.tag }}
+        file_glob: true
+        overwrite: true
