@@ -5,6 +5,8 @@
 
 package sample.objc
 
+// DY: Lesha, you provide it as an example - please put at least a few comments what is done here or put the link to origin project with docs
+
 import kotlinx.cinterop.*
 import platform.AppKit.*
 import platform.Contacts.CNContactStore
