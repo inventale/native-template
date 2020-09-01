@@ -1,3 +1,4 @@
+// Was copied from https://github.com/JetBrains/kotlin-native/blob/master/samples/objc/src/objcMain/kotlin/Async.kt
 package sample.objc
 
 import kotlinx.cinterop.staticCFunction

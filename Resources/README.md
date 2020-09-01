@@ -1,1 +1,1 @@
-Place common resource here
+Place common resources (i.e. images) here
